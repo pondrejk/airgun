@@ -523,6 +523,9 @@ class HostDetailsView(BaseLoggedInView):
     class properties(SatTab):
         properties_table = SatTableWithUnevenStructure(locator="//table[@id='properties_table']")
 
+    @View.nested
+    class initial_configuration(Text):
+        initial_curl = Text('//class[@id="host-init-conf-textarea"]')
 
 class HostEditView(HostCreateView):
     breadcrumb = BreadCrumb()
